@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="index.css">
+
+    <title>D01-Encriptador</title>
 </head>
 <body>
-    
+    <header></header>
+    <main>
+        <fieldset>
+            <label for="mensajeOriginal"></label>
+            <textarea id="mensajeOriginal" cols="70" rows="10" required placeholder="Ingresa el texto"></textarea>
+        </fieldset>
+        
+        <fieldset>
+            <label for="mensajeEncriptado"></label>
+            <textarea id="mensajeEncriptado" cols="70" rows="10" required></textarea>
+        </fieldset>
+        
+        <fieldset>
+            <input type="button" id="idEncriptar" value="Encriptar" onclick="encriptar()"/>
+            <input type="button" id="idDesencriptar" value="Desencriptar" onclick="desencriptar()"/>
+            <input type="button" id="idCopiar" value="Copiar" onclick="copiar()"/>
+            <input type="button" id="idLimpiar" value="Volver a Jugar" onclick="limpiar()"/>
+            
+        </fieldset>
+    </main>
+    <footer></footer>
+
+    <script src="app.js" defer></script>
 </body>
 </html>
