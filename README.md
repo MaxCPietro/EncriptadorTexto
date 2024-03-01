@@ -1,1 +1,1 @@
-#Juego de Encripctación de texto
+Juego de Encripctación de texto
