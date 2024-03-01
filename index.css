@@ -1,0 +1,160 @@
+/*1-CSS para etiqietas HTML*/
+body{
+    background-color: #f8f8f8;
+}
+
+fieldset h3 {
+    font-family: 'Montserrat', sans-serif; /* Utilizando la fuente Montserrat */
+    font-size: 24px; /* Tamaño del texto */
+    color: #2c3e50; /* Color del texto */
+}
+
+/* Estilo para los placeholders */
+::placeholder {
+    font-family: 'Open Sans', sans-serif; /* Fuente para los placeholders */
+    font-size: 15px; /* Tamaño del texto del placeholder */
+    color: #d35400; /* Color rojo suave para los placeholders */
+} 
+
+/* Estilo para el contenido de los cuadros de texto */
+textarea {
+    font-family: 'Roboto', sans-serif; /* Fuente para el contenido */
+    font-size: 16px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+    border-radius: 10px; /* Redondear bordes */
+}
+
+/*2-CSS para clases*/
+.header {
+    display: flex;
+    width: 940px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.header img {
+    flex: 0 0 auto;
+}
+.header h1 {
+    flex: 1 1 100%;
+    align-self: center;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
+  color:#0A3871; /* Color del texto */
+}
+
+.cuerpo {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 940px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.cuerpoTexto {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.cuadroTexto {
+    flex: 1; /* Distribuirá el espacio disponible de manera uniforme entre los fieldsets */
+    margin-right: 10px; /* Margen entre los fieldsets */
+    margin-left: 10px;
+}
+
+.cuerpo fieldset textarea {
+    position: relative;
+    width: 100%; /* Ocupará todo el ancho disponible dentro del fieldset */
+    height: 100%; /* Ocupará todo el alto disponible dentro del fieldset */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total del textarea */
+    resize: none; /* Evita que se pueda redimensionar el textarea */
+    }
+
+.cuerpoBoton {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px; 
+}
+.botonJugar {
+    display: flex;
+}
+
+.copyright {
+    font-family: 'Arial', sans-serif; /* Fuente para el texto de copyright */
+    font-size: 14px; /* Tamaño del texto */
+    color: #666; /* Color del texto */
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Estilo base del botón */
+.copado-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #4CAF50; /* Color de fondo predeterminado */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo del botón cuando está deshabilitado */
+.copado-btn:disabled {
+    background-color: #cccccc; /* Color de fondo cuando está deshabilitado */
+    color: #666666; /* Color del texto cuando está deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor cuando está deshabilitado */
+}
+
+/* Cambio de estilo al pasar el cursor sobre el botón */
+.copado-btn:hover:not(:disabled) {
+    background-color: #45a049; /* Cambio de color de fondo al pasar el cursor */
+}
+
+/* Cambio de estilo al presionar el botón */
+.copado-btn:active:not(:disabled) {
+    background-color: #3e8e41; /* Cambio de color de fondo al presionar */
+}
+
+/* Estilo base del botón canchero */
+.super-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #ff6f61; /* Color de fondo predeterminado */
+    border: 2px solid transparent;
+    border-radius: 30px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+/* Estilo del botón canchero cuando está deshabilitado */
+.super-btn:disabled {
+    background-color: #cccccc; /* Color de fondo cuando está deshabilitado */
+    color: #666666; /* Color del texto cuando está deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor cuando está deshabilitado */
+}
+
+/* Cambio de estilo al pasar el cursor sobre el botón canchero */
+.super-btn:hover:not(:disabled) {
+    background-color: #ff8b80; /* Cambio de color de fondo al pasar el cursor */
+}
+
+/* Cambio de estilo al presionar el botón canchero */
+.super-btn:active:not(:disabled) {
+   background-color: #ff5443; /* Cambio de color de fondo al presionar */
+   border-color: #ff5443; /* Cambio de color del borde al presionar */
+}
+
+/*3-CSS para ID*/

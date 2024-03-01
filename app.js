@@ -9,24 +9,34 @@ function inicilizarPantalla() {
     mensajeAEncriptar = "";
     mensajeEncriptado = "";
     mensajeDesencriptado = "";
-    document.querySelector("#mensajeEncriptado").value = "";
-    document.querySelector("#idDesencriptar").setAttribute("disabled", "true");
-    document.getElementById("idCopiar").style.visibility = "hidden";
-    document.getElementById("mensajeEncriptado").readOnly = true;
-    document.getElementById("idLimpiar").style.visibility = "hidden";
+    
     document.getElementById("mensajeOriginal").readOnly = false;
+    document.getElementById("mensajeOriginal").value = "";
     document.getElementById("idEncriptar").removeAttribute("disabled");
+    document.getElementById("mensajeOriginal").setAttribute ("placeholder","Ingresa el texto a encriptar");
+
+    document.querySelector("#mensajeEncriptado").value = "";
+    document.getElementById("mensajeEncriptado").readOnly = true;
+    document.getElementById("mensajeEncriptado").setAttribute ("placeholder","Campo de solo lectura");
+
+    document.querySelector("#idDesencriptar").setAttribute("disabled", "true");
+    //document.getElementById("idCopiar").style.visibility = "hidden";
+
+    document.getElementById("idLimpiar").setAttribute("disabled", "true");
 }
-function hacerInvisible() {
+
+/*function hacerInvisible() {
     document.getElementById("idCopiar").style.visibility = "hidden";
 }
 //Visibilizar el boton
 function hacerVisible() {
     document.getElementById("idCopiar").style.visibility = "visible";
-}
+}*/
 
 
 function encriptar() {
+    mensajeEncriptado = "";
+    mensajeDesencriptado = "";
     mensajeAEncriptar=document.getElementById("mensajeOriginal").value;
     console.log(`mensaje a encriptar: ${mensajeAEncriptar} tipo de dato: ${typeof(mensajeAEncriptar)}`)
     console.log(`Longitud del mensaje: ${mensajeAEncriptar.length}`);
@@ -45,13 +55,18 @@ function encriptar() {
     }
     console.log(`mensaje encriptado: ${mensajeEncriptado} tipo de dato: ${typeof(mensajeEncriptado)}`)
     console.log(`Longitud del mensaje: ${mensajeEncriptado.length}`);
+    
     document.getElementById("mensajeEncriptado").value = mensajeEncriptado;
-    document.getElementById("mensajeOriginal").readOnly = true;
-    hacerVisible();
+    document.getElementById("mensajeOriginal").value = "";
+    //document.getElementById("mensajeOriginal").readOnly = true;
+    document.getElementById("mensajeOriginal").setAttribute ("placeholder","Campo de solo lectura");
+
+    document.querySelector("#idDesencriptar").removeAttribute("disabled");
+    document.querySelector("#idEncriptar").setAttribute("disabled", "true");
     return;
 }
 
-function copiar() {
+/*function copiar() {
     //Borro mensaje original
     document.getElementById("mensajeOriginal").value = "";
     document.getElementById("mensajeEncriptado").value;
@@ -63,9 +78,10 @@ function copiar() {
     document.querySelector("#idEncriptar").setAttribute("disabled", "true");
     document.getElementById("mensajeOriginal").readOnly = false;
     hacerInvisible();
-}
+}*/
 
 function desencriptar() {
+    mensajeAEncriptar = "";
     console.log(`mensaje a desencriptar: ${mensajeEncriptado} tipo de dato: ${typeof(mensajeEncriptado)}`)
     console.log(`Longitud del mensaje: ${mensajeEncriptado.length}`);
     let i = 0;
@@ -111,11 +127,15 @@ function desencriptar() {
         }
     }
     console.log(`mensaje desencriptado ${mensajeDesencriptado}`)      
-    document.getElementById("mensajeEncriptado").value = mensajeDesencriptado;
-    document.getElementById("mensajeOriginal").value = "";
+    
+    document.getElementById("mensajeOriginal").value = mensajeDesencriptado;
+    document.getElementById("mensajeEncriptado").value = "";
+    document.getElementById("mensajeEncriptado").setAttribute ("placeholder","Campo de solo lectura");
+
+    document.querySelector("#idEncriptar").removeAttribute("disabled");
+
     document.querySelector("#idDesencriptar").setAttribute("disabled", "true");
-    document.getElementById("mensajeOriginal").readOnly = true;
-    document.getElementById("idLimpiar").style.visibility = "visible";
+    document.getElementById("idLimpiar").removeAttribute("disabled");
 }
 
 function limpiar() {

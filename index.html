@@ -7,30 +7,53 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="index.css">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
+
+
+
     <title>D01-Encriptador</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <div class="header">
+            <img src="img/logo.png" alt="logo de la pagina">
+            <h1 class="titulo">Juego para encriptar texto</h1>
+
+        </div>
+    </header>
     <main>
-        <fieldset>
-            <label for="mensajeOriginal"></label>
-            <textarea id="mensajeOriginal" cols="70" rows="10" required placeholder="Ingresa el texto"></textarea>
-        </fieldset>
-        
-        <fieldset>
-            <label for="mensajeEncriptado"></label>
-            <textarea id="mensajeEncriptado" cols="70" rows="10" required></textarea>
-        </fieldset>
-        
-        <fieldset>
-            <input type="button" id="idEncriptar" value="Encriptar" onclick="encriptar()"/>
-            <input type="button" id="idDesencriptar" value="Desencriptar" onclick="desencriptar()"/>
-            <input type="button" id="idCopiar" value="Copiar" onclick="copiar()"/>
-            <input type="button" id="idLimpiar" value="Volver a Jugar" onclick="limpiar()"/>
-            
-        </fieldset>
+        <div class="cuerpo">
+            <div class="cuerpoTexto">
+                <fieldset class="cuadroTexto">
+                    <h3>Texto Original</h3>
+                    <label for="mensajeOriginal"></label>
+                    <textarea id="mensajeOriginal" cols="70" rows="15" required placeholder="Ingresa el texto a encriptar"></textarea>
+                    <input type="button" class="copado-btn" id="idEncriptar" value="Encriptar" onclick="encriptar()"/>
+                </fieldset>
+                
+                <fieldset class="cuadroTexto">
+                    <h3>Texto Encriptado</h3>
+                    <label for="mensajeEncriptado"></label>
+                    <textarea id="mensajeEncriptado" cols="70" rows="15" required></textarea>
+                    <!--img src="img/Munieco.png" alt="Imagen" class="imagen"-->
+                    <input type="button" class="copado-btn" id="idDesencriptar" value="Desencriptar" onclick="desencriptar()"/>
+                    <!--input type="button" id="idCopiar" value="Copiar" onclick="copiar()"/-->
+                </fieldset>
+            </div>    
+            <div class="cuerpoBoton">
+                <fieldset class="botonJugar">
+                    <input type="button" class="super-btn" id="idLimpiar" value="Volver a Jugar" onclick="limpiar()"/>            
+                </fieldset>
+        </div>
     </main>
-    <footer></footer>
+    <footer>
+        <p class="copyright">&copy Copyright By Max</p>
+    </footer>
 
     <script src="app.js" defer></script>
 </body>
